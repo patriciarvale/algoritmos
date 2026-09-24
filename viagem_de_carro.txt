@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    int distancia, verba, capacidade, postos, valorGas;
+    int gasto, sobra;
+    double consumo, distPostos, consumo2;
+    scanf("%d %d %d %d %d", &distancia, &verba, &capacidade, &postos, &valorgas);
+    
+    consumo = distancia/10.0; // o carro gasta 10km/h -> quanto sera consumido de combubstivel?
+    
+    if (consumo>capacidade){
+        gasto = (consumo - capacidade) * valorGas; // quanto vai gastar de combustivel?
+        distPostos = distancia / (postos + 1); 
+        consumo2 = distPostos / 10.0; // o carro tem autonomia pra chegar no posto?
+        
+        if (verba==0 || verba<gasto || postos==0 || consumo2>capacidade){ // se nao tiver dinheiro pra gasolina ou nao tiver combustivel suficiente.
+            printf("Nao pode viajar.\n");
+        }
+        else {
+            sobra = verba - gasto;
+            printf("Pode viajar.\nR$: %d\n", sobra);
+        }
+    }
+    else {
+        printf("Pode viajar.\nR$: %d\n", verba);
+    }
+    return 0;
+}
