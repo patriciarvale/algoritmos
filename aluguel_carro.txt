@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    int dias, km, taxakm;
+    scanf("%d %d", &dias, &km);
+    double aPagar = 90.00 * dias; // a diaria eh fixa em 90 reais
+    taxaKm = dias * 100; // bonus de 100km por diaria 
+    if (km > taxakm){
+        aPagar += (km - taxakm) * 12; // 12 reais por km excedido
+    }
+    printf("%.2lf\n", aPagar);
+    return 0;
+}
